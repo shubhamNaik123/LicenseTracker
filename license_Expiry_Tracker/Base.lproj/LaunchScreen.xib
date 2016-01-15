@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,35 +12,44 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ2-l0-RWx">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ2-l0-RWx">
                     <rect key="frame" x="131" y="116" width="59" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="SkL-SE-zoE"/>
+                        <constraint firstAttribute="width" constant="59" id="vfn-CE-mDG"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMT-aW-1BH">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMT-aW-1BH">
                     <rect key="frame" x="115" y="166" width="90" height="42"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msn-Pc-BsG">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msn-Pc-BsG">
                     <rect key="frame" x="121" y="216" width="84" height="42"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thumbs-up-256.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ehd-lg-hON">
-                    <rect key="frame" x="129" y="266" width="62" height="54"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailingMargin" secondItem="Msn-Pc-BsG" secondAttribute="trailing" constant="107" id="1tw-fI-K0E"/>
+                <constraint firstItem="Msn-Pc-BsG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="113" id="4sF-R7-4HX"/>
+                <constraint firstItem="iMT-aW-1BH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="115" id="6xK-T7-IQ3"/>
+                <constraint firstItem="aJ2-l0-RWx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Mrv-mL-0Qx"/>
+                <constraint firstAttribute="trailing" secondItem="iMT-aW-1BH" secondAttribute="trailing" constant="115" id="Q6M-6Z-pfq"/>
+                <constraint firstItem="iMT-aW-1BH" firstAttribute="top" secondItem="aJ2-l0-RWx" secondAttribute="bottom" constant="8" id="T7q-Wx-znZ"/>
+                <constraint firstItem="iMT-aW-1BH" firstAttribute="centerX" secondItem="aJ2-l0-RWx" secondAttribute="centerX" id="cWU-xa-zxq"/>
+                <constraint firstItem="aJ2-l0-RWx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="116" id="ifs-vZ-Qr3"/>
+                <constraint firstItem="Msn-Pc-BsG" firstAttribute="top" secondItem="iMT-aW-1BH" secondAttribute="bottom" constant="8" id="yrx-Qj-5V4"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
-    <resources>
-        <image name="thumbs-up-256.png" width="256" height="256"/>
-    </resources>
 </document>

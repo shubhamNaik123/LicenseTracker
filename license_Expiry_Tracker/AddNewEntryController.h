@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
 #import "ViewController.h"
-
+#import "HelpViewController.h"
 @interface AddNewEntryController : UIViewController
 @property (nonatomic, strong) DBManager *model;
 @property (weak, nonatomic) IBOutlet UILabel *lblDisplayDate;
@@ -19,7 +19,7 @@
 - (IBAction)pickerAction:(id)sender;
 - (IBAction)saveDetails:(UIButton *)sender;
 - (IBAction)openHelp:(id)sender;
-- (IBAction)btnCancel:(id)sender;
+
 /*- (IBAction)goToHome:(id)sender;
 - (IBAction)viewAll:(id)sender;
 - (IBAction)showAll:(id)sender;

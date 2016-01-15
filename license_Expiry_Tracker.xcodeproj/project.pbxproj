@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B4E50E60191CC514C6C342B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE74C8F4A2EC30C5B849EC0 /* libPods.a */; };
+		4920716F1C47B10C002ACC06 /* WebParserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4920716E1C47B10C002ACC06 /* WebParserViewController.m */; };
+		492071711C47B26F002ACC06 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 492071701C47B26F002ACC06 /* libxml2.tbd */; };
 		4964A85F1BFF29C500F4B902 /* license.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4964A85E1BFF29C500F4B902 /* license.sqlite3 */; };
 		4964A8621BFF3DD900F4B902 /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4964A8611BFF3DD900F4B902 /* ChartViewController.m */; };
 		4964A86E1BFF516B00F4B902 /* BEMAverageLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4964A8651BFF516B00F4B902 /* BEMAverageLine.m */; };
@@ -27,6 +29,7 @@
 		499882B61C22CF8A00F33749 /* ContactUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 499882B51C22CF8A00F33749 /* ContactUSViewController.m */; };
 		499882B81C22CFBF00F33749 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499882B71C22CFBF00F33749 /* MessageUI.framework */; };
 		499882BB1C22D72D00F33749 /* SubmitStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 499882BA1C22D72D00F33749 /* SubmitStoryViewController.m */; };
+		49A01D5B1C48EACF00B3D938 /* CustomeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A01D5A1C48EACF00B3D938 /* CustomeClass.m */; };
 		49CEABC61BE721290090F387 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CEABC51BE721290090F387 /* main.m */; };
 		49CEABC91BE721290090F387 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CEABC81BE721290090F387 /* AppDelegate.m */; };
 		49CEABCC1BE721290090F387 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CEABCB1BE721290090F387 /* ViewController.m */; };
@@ -51,6 +54,9 @@
 /* Begin PBXFileReference section */
 		0FE74C8F4A2EC30C5B849EC0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6FDF7DAC8627F2C2D4E27E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4920716D1C47B10C002ACC06 /* WebParserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebParserViewController.h; sourceTree = "<group>"; };
+		4920716E1C47B10C002ACC06 /* WebParserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebParserViewController.m; sourceTree = "<group>"; };
+		492071701C47B26F002ACC06 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		4964A85E1BFF29C500F4B902 /* license.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = license.sqlite3; sourceTree = "<group>"; };
 		4964A8601BFF3DD900F4B902 /* ChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
 		4964A8611BFF3DD900F4B902 /* ChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartViewController.m; sourceTree = "<group>"; };
@@ -86,6 +92,8 @@
 		499882B71C22CFBF00F33749 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		499882B91C22D72D00F33749 /* SubmitStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitStoryViewController.h; sourceTree = "<group>"; };
 		499882BA1C22D72D00F33749 /* SubmitStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitStoryViewController.m; sourceTree = "<group>"; };
+		49A01D591C48EACF00B3D938 /* CustomeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomeClass.h; sourceTree = "<group>"; };
+		49A01D5A1C48EACF00B3D938 /* CustomeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomeClass.m; sourceTree = "<group>"; };
 		49CEABC01BE721290090F387 /* license_Expiry_Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = license_Expiry_Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CEABC41BE721290090F387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49CEABC51BE721290090F387 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492071711C47B26F002ACC06 /* libxml2.tbd in Frameworks */,
 				49DE9A671C3A31D10031019A /* libsqlite3.tbd in Frameworks */,
 				499882B81C22CFBF00F33749 /* MessageUI.framework in Frameworks */,
 				0B4E50E60191CC514C6C342B /* libPods.a in Frameworks */,
@@ -157,6 +166,8 @@
 			children = (
 				4977B4381BE7783E000B23FC /* DBManager.h */,
 				4977B4391BE7783E000B23FC /* DBManager.m */,
+				49A01D591C48EACF00B3D938 /* CustomeClass.h */,
+				49A01D5A1C48EACF00B3D938 /* CustomeClass.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -185,6 +196,8 @@
 				499882BA1C22D72D00F33749 /* SubmitStoryViewController.m */,
 				496BFBE41C23CF4E0001B2BD /* WebPageViewController.h */,
 				496BFBE51C23CF4E0001B2BD /* WebPageViewController.m */,
+				4920716D1C47B10C002ACC06 /* WebParserViewController.h */,
+				4920716E1C47B10C002ACC06 /* WebParserViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -269,6 +282,7 @@
 		BE3F2846F47C8BC7D2A769D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				492071701C47B26F002ACC06 /* libxml2.tbd */,
 				0FE74C8F4A2EC30C5B849EC0 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -446,9 +460,11 @@
 				4964A8701BFF516B00F4B902 /* BEMLine.m in Sources */,
 				49CEABCC1BE721290090F387 /* ViewController.m in Sources */,
 				4991A73C1BF0872900B0B8F4 /* EditViewController.m in Sources */,
+				49A01D5B1C48EACF00B3D938 /* CustomeClass.m in Sources */,
 				49CEABC91BE721290090F387 /* AppDelegate.m in Sources */,
 				499882B61C22CF8A00F33749 /* ContactUSViewController.m in Sources */,
 				49CEABC61BE721290090F387 /* main.m in Sources */,
+				4920716F1C47B10C002ACC06 /* WebParserViewController.m in Sources */,
 				49DE9A6A1C3A55E70031019A /* ViewAllTableViewController.m in Sources */,
 				4977B4301BE743DA000B23FC /* AddNewEntryController.m in Sources */,
 				4977B43A1BE7783E000B23FC /* DBManager.m in Sources */,

@@ -70,8 +70,11 @@ NSString *formatedDate;
 }
 
 - (IBAction)openHelp:(id)sender {
-    NSLog(@"Click");
+    HelpViewController *infoController = [self.storyboard instantiateViewControllerWithIdentifier:@"Help"];
+    [self.navigationController pushViewController:infoController animated:YES];
 }
+
+
 
 -(void) displayAlert: (NSString *) msg
 {
@@ -119,8 +122,5 @@ NSString *formatedDate;
     [self.licenseName endEditing:YES];
     
 }
-- (IBAction)btnCancel:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 @end

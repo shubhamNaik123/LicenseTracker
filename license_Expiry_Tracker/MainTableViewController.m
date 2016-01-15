@@ -8,7 +8,7 @@
 
 #import "MainTableViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import "CustomeClass.h"
 @interface MainTableViewController ()
 {
     NSXMLParser *parser;
@@ -96,67 +96,68 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
-    cell.textLabel.text = [[feeds objectAtIndex:indexPath.row]objectForKey:@"title"];
-    cell.detailTextLabel.text = [[feeds objectAtIndex:indexPath.row]objectForKey:@"description"];
     NSURL *img = [NSURL URLWithString:[[feeds objectAtIndex:indexPath.row]objectForKey:@"imagelink"]];
-   
-    if(![[img absoluteString] isEqualToString:@""]) {
-      
-        
-      [cell.imageView sd_setImageWithURL:img
-                        placeholderImage:[UIImage imageNamed:@"noImage"]];
-      //  [cell.imageView setContentMode:UIViewContentModeScaleAspectFill];
-          //cell.imageView.frame =CGRectMake(60, 60, 90, 90);
-        // options:indexPath.row == 0 ? SDWebImageRefreshCached : 0
-     }
-    else
-    {
-        [cell.imageView setContentMode:UIViewContentModeScaleAspectFill];
-        cell.imageView.image = [UIImage imageNamed:@"noImage"];
-        cell.imageView.frame = CGRectMake(0, 0, 65, 65);
-       /// cell.accessoryView = imageView;
-        //cell.accessoryView.frame = CGRectMake(0, 0, 65, 65);
+    
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-        return cell;
+    UILabel *contentTitle = (UILabel *)[cell viewWithTag:102];
+    contentTitle.text =[[feeds objectAtIndex:indexPath.row]objectForKey:@"title"];
+    
+    
+    UITextView *contentDetails = (UITextView *)[cell viewWithTag:103];
+    contentDetails.text = [[feeds objectAtIndex:indexPath.row]objectForKey:@"description"];
    
-}
+    UIImageView *contentImage = (UIImageView *)[cell viewWithTag:101];
+      if(![[img absoluteString] isEqualToString:@""]) {
+    [contentImage sd_setImageWithURL:img
+         placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+      }
+      else{
+          contentImage.image = [UIImage imageNamed:@"noImage"];
+
+      }
+     return cell;
+  }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"WebPage" sender:self];
+   [self performSegueWithIdentifier:@"testWebPage" sender:self];
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   WebPageViewController *webView = segue.destinationViewController;
+    WebParserViewController *webPageParser = segue.destinationViewController;
+    
     NSMutableArray *linksList = [[NSMutableArray alloc]initWithCapacity:5];
-    for(int i =0; i< [feeds count];i++)
+   for(int i =0; i< [feeds count];i++)
     {
         NSString *string = [feeds[i] objectForKey:@"link"];
         NSArray *linkArr = [NSArray arrayWithObjects:string, nil];
        [linksList  addObjectsFromArray:linkArr];
-    }
-  if ([[segue identifier] isEqualToString:@"WebPage"]) {
+      }
+  
+    if ([[segue identifier] isEqualToString:@"testWebPage"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSString *string = [feeds[indexPath.row] objectForKey:@"link"];
         NSInteger row = indexPath.row;
         
         NSString *data =[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        webView.Links = [linksList copy];
-        webView.LinkNumber = row;
-        webView.linkUrl = data;
-        webView.licenseName = @"abc";
+        webPageParser.Links = [linksList copy];
+        webPageParser.LinkNumber = row;
+        webPageParser.linkUrl = data;
+        
     }
- 
+
     
 }
-
-
 
 - (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
@@ -203,7 +204,6 @@
             value2 = [hashtagWord substringFromIndex:scanner.scanLocation];
             value2 = [value2 substringToIndex:[value2 length]-2];
             ActualUrl = value2;
-            NSLog(@"Actual url = %@",ActualUrl);
         }
     }
     else if ([element isEqualToString:@"description"]) {

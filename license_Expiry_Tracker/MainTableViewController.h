@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WebPageViewController.h"
+#import "WebParserViewController.h"
 @interface MainTableViewController : UITableViewController<NSXMLParserDelegate>
 
 @property (nonatomic,strong) UIActivityIndicatorView *activityIndicatorView;
@@ -15,4 +16,8 @@
 @property (nonatomic,strong) NSString *licenseName;
 @property (nonatomic,strong) NSString *name;
 @property (strong, nonatomic) IBOutlet UITableView *tblListAll;
+
+
+
+
 @end

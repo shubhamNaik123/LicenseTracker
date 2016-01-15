@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "DBManager.h"
 #import "EditViewController.h"
-
+#import "HelpViewController.h"
 @interface ViewAllTableViewController : UITableViewController<UISearchResultsUpdating,UISearchBarDelegate>
 @property (nonatomic,strong) DBManager *model;
 - (IBAction)btnEdit:(id)sender;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnEditLabel;
 @property(nonatomic,assign) int notificationID;
+- (IBAction)openHelp:(id)sender;
 @end

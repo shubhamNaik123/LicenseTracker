@@ -88,7 +88,6 @@
 {
    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog(@"here====%d",[[uniqueID objectAtIndex:indexPath.row]intValue]);
         self.notificationID = [[uniqueID objectAtIndex:indexPath.row]intValue];
         [self displayConfirmation];
     }
@@ -152,11 +151,6 @@
     [components setMinute:0];
     [components setSecond:0];
     NSDate *yesterday = [cal dateByAddingComponents:components toDate: now options:0];
-    
-    
-    NSString *YesterdayformatedDate = [dateFormat stringFromDate:yesterday];
-    NSLog(@"YesterdayformatedDate=%@",YesterdayformatedDate);
-
     NSString *formatedDate = [dateFormat stringFromDate:yesterday];
     NSDate *weekLater = [yesterday dateByAddingTimeInterval:+8*24*60*60];
     NSString *formatedWeekLaterDate = [dateFormat stringFromDate:weekLater];
@@ -164,22 +158,22 @@
     tableData1 = [[NSMutableArray alloc]init];
     tableData2 = [[NSMutableArray alloc]init];
     uniqueID = [[NSMutableArray alloc]init];
+    NSLog(@"Count == %lu",(unsigned long)[LicenseTrackerArray count]);
+    if([LicenseTrackerArray count]> 0){
     for (int i =0; i<[LicenseTrackerArray count]; i++) {
         NSString *date = [[LicenseTrackerArray objectAtIndex:i]objectForKey:@"LicenseDate"];
         if ([formatedDate compare:date] == NSOrderedAscending &&
             [formatedWeekLaterDate compare:date] == NSOrderedDescending) {
-                        NSLog(@"LicenseName %@",[[LicenseTrackerArray objectAtIndex:i]objectForKey:@"LicenseName"]);
-            NSLog(@"LicenseDate %@",[[LicenseTrackerArray objectAtIndex:i]objectForKey:@"LicenseDate"]);
-            
-            
             [tableData1 addObject:[[LicenseTrackerArray objectAtIndex:i]objectForKey:@"LicenseName"]];
-           [tableData2 addObject:[[LicenseTrackerArray objectAtIndex:i]objectForKey:@"LicenseDate"]];
+            [tableData2 addObject:[[LicenseTrackerArray objectAtIndex:i]objectForKey:@"LicenseDate"]];
             [uniqueID addObject:[[LicenseTrackerArray objectAtIndex:i]objectForKey:@"NotificationID"]];
 
+            }
         }
-
     }
-    NSLog(@"uniqueID= %@",uniqueID);
+    else{
+        [self displayAlert:@"No Upcoming Licenses."];
+    }
 }
 
 
@@ -210,7 +204,6 @@
         [LicenseDetails setObject:LicenseDateLocal forKey:@"LicenseDate"];
         [LicenseTrackerArray addObject:[LicenseDetails copy]];
             }
-    NSLog(@"LicenseTrackerArray = %@",LicenseTrackerArray);
     [self displayUpcomingLicenseExpiry];
 }
 

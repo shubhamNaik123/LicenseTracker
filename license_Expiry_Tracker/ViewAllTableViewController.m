@@ -97,7 +97,6 @@
     if(self.searchController.searchResultsController)
     {
         NSInteger rowNo = indexPath.row;
-        NSLog(@"Here %ld",rowNo);
         value1=[tableData11 objectAtIndex:rowNo];
         value2=[tableData12 objectAtIndex:rowNo];
         [self performSegueWithIdentifier:@"EditData" sender:self];
@@ -115,13 +114,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"prepareForSegue: %@", segue.identifier);
     EditViewController *transferViewController = segue.destinationViewController;
     
     if ([segue.identifier isEqualToString:@"EditData"]) {
         transferViewController.licenseName=value1;
         transferViewController.expiryDate = value2;
-        NSLog(@"%d",self.notificationID);
         transferViewController.localNotificationID = self.notificationID;
     }
 }
@@ -168,8 +165,6 @@
 {
      self.notificationID = [[uniqueID objectAtIndex:indexPath.row]intValue];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSLog(@"here====%d",[[uniqueID objectAtIndex:indexPath.row]intValue]);
-       
         [self displayConfirmation];
      }
 }
@@ -240,8 +235,6 @@
 
 - (void)CancelExistingNotification
 {
-    NSLog(@"Notification id = %d",self.notificationID);
-    //cancel alarm
     UIApplication *app = [UIApplication sharedApplication];
     NSArray *eventArray = [app scheduledLocalNotifications];
     for (int i=0; i<[eventArray count]; i++)
@@ -257,4 +250,28 @@
     }
 }
 
+
+-(void) displayAlert: (NSString *) msg
+{
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:@"License Expiry Tracker"
+                                  message:msg
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+- (IBAction)openHelp:(id)sender {
+    HelpViewController *infoController = [self.storyboard instantiateViewControllerWithIdentifier:@"Help"];
+    [self.navigationController pushViewController:infoController animated:YES];
+}
 @end
